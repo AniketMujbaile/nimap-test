@@ -6,7 +6,8 @@ const routes = require('./routes/index');
 const dotenv = require('dotenv');
 dotenv.config();
 
-app.use(cors({credentials: true, origin: "http://localhost:3001"}));
+//app.use(cors({credentials: true, origin: "http://localhost:3001"}));
+app.use(cors({credentials: true, origin: "https://client-kappa-livid.vercel.app/"}));
 
 // Middleware
 app.use(bodyParser.json());
