@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
 const cors = require('cors')
 const routes = require('./routes/index');
 const dotenv = require('dotenv');
@@ -10,8 +9,8 @@ dotenv.config();
 app.use(cors({credentials: true, origin: "https://client-kappa-livid.vercel.app"}));
 
 // Middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true })); 
 
 // Routes
 app.use('/api', routes);
